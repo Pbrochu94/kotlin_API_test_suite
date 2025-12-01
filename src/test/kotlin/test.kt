@@ -124,6 +124,16 @@ class Case7{
         .statusCode(201)
         .extract()
             .path("")
-//        println(response)
+        println(response::class)
+        val actualTitle = response["title"]
+        val expectedTitle = "This is a brand new post"
+        assertAll(
+            {assertEquals(expectedTitle,actualTitle)},
+            {assertNotNull(response["id"])}
+        )
     }
+}
+
+class Case8{
+
 }
